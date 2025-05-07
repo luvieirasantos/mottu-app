@@ -47,7 +47,7 @@ Nossa solução é um **sistema completo de mapeamento inteligente de pátios e 
 
 ### 1. Clone o repositório
 ```bash
-https://github.com/seu-repositorio/project-mottu
+https://github.com/luvieirasantos/mottu-app
 ```
 
 ### 2. Instale as dependências
