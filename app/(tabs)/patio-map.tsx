@@ -101,10 +101,14 @@ export default function PatioMap() {
         </View>
         <View style={styles.parkingArea}>
           <View style={styles.parkingRow}>
-            {[0, 1].map((index) => renderParkingSpot(zone, index))}
+            {[0, 1].map((index) => (
+              <React.Fragment key={index}>{renderParkingSpot(zone, index)}</React.Fragment>
+            ))}
           </View>
           <View style={styles.parkingRow}>
-            {[2, 3].map((index) => renderParkingSpot(zone, index))}
+            {[2, 3].map((index) => (
+              <React.Fragment key={index}>{renderParkingSpot(zone, index)}</React.Fragment>
+            ))}
           </View>
         </View>
       </View>
@@ -137,14 +141,18 @@ export default function PatioMap() {
         <View style={styles.mapContainer}>
           <View style={styles.buildingOutline}>
             <View style={styles.leftWing}>
-              {['A1', 'B1', 'C1', 'D1'].map(zone => renderZone(zone))}
+              {['A1', 'B1', 'C1', 'D1'].map(zone => (
+                <React.Fragment key={zone}>{renderZone(zone)}</React.Fragment>
+              ))}
             </View>
             <View style={styles.corridor}>
               <View style={styles.stairs} />
               <View style={styles.entrance} />
             </View>
             <View style={styles.rightWing}>
-              {['A2', 'B2', 'C2', 'D2'].map(zone => renderZone(zone))}
+              {['A2', 'B2', 'C2', 'D2'].map(zone => (
+                <React.Fragment key={zone}>{renderZone(zone)}</React.Fragment>
+              ))}
             </View>
           </View>
           {rssiLevel !== 'none' && (
