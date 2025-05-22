@@ -51,24 +51,25 @@ export default function PatioMap() {
   const getSignalPosition = () => {
     switch (rssiLevel) {
       case 'high':
-        return { top: '10%', left: '10%' }; // Near A zones
+        return { top: 20, left: 20 };
       case 'medium':
-        return { top: '40%', left: '50%' }; // Near B zones
+        return { top: 100, left: 150 };
       case 'low':
-        return { top: '80%', left: '80%' }; // Near D zones
+        return { top: 200, left: 300 };
       default:
-        return { top: '50%', left: '50%' };
+        return { top: 100, left: 150 };
     }
   };
 
   const signalAnimatedStyle = useAnimatedStyle(() => ({
     opacity: signalOpacity.value,
     transform: [{ scale: signalScale.value }],
-    ...getSignalPosition(),
     position: 'absolute',
     width: 100,
     height: 100,
     borderRadius: 50,
+    top: getSignalPosition().top,
+    left: getSignalPosition().left,
     backgroundColor: rssiLevel === 'high' 
       ? 'rgba(0, 200, 81, 0.3)' 
       : rssiLevel === 'medium'
